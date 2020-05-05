@@ -7,6 +7,7 @@ namespace Calculadora
         static void Main(string[] args)
         {
             MenuSelecao();
+            Console.WriteLine("-----------------------Fim da Operação--------------------------");
         }
 
         static void SelecioneOperacao(int operacao)
@@ -16,7 +17,9 @@ namespace Calculadora
                 case 1:
                     {
                         (float numeroA, float numeroB) = GetNumeros();
-                        var resultado = Soma.Soma.Calcular(numeroA, numeroB);
+                        // var resultado = Soma.Soma.Calcular(numeroA, numeroB);
+
+                        var resultado = Sum.Calculate(numeroA, numeroB);
                         Console.WriteLine($"O resultado da doma de {numeroA} + {numeroB} é {resultado}");
                         break;
                     }
@@ -24,36 +27,38 @@ namespace Calculadora
                 case 2:
                     {
                         (float numeroA, float numeroB) = GetNumeros();
-                        var resultado = Subtrair.Subtrair.Calcular(numeroA, numeroB);
+                        // var resultado = Subtrair.Subtrair.Calcular(numeroA, numeroB);
+                        
+                        var resultado = Subtract.Calculate(numeroA, numeroB);
                         Console.WriteLine($"O resultado da subtração de {numeroA} - {numeroB} é {resultado}");                        
                         break;
                     }
                 case 3:
                     {
                         (float numeroA, float numeroB) = GetNumeros();
-                        var resultado = Multiplicar.Multiplicar.Calcular(numeroA, numeroB);
+                        // var resultado = Multiplicar.Multiplicar.Calcular(numeroA, numeroB);
+                        var resultado = Multiply.Calculate(numeroA, numeroB);
                         Console.WriteLine($"O resultado da multiplicação de {numeroA} por {numeroB} é {resultado}");
                         break;
                     }
                 case 4:
                     {
                         (float numeroA, float numeroB) = GetNumeros();
-                        var resultado = Dividir.Dividir.Calcular(numeroA, numeroB);
+                        // var resultado = Dividir.Dividir.Calcular(numeroA, numeroB);
+                        var resultado = Divide.Calculate(numeroA, numeroB);
                         Console.WriteLine($"O resultado da divisão de {numeroA} por {numeroB} é {resultado}");
                         break;
                     }
                 default:
                     {
-                        Console.WriteLine("Operação inválida.");
-                        Console.WriteLine("Por favor selecione outra opção.");
+                        Console.WriteLine("Operação inválida!!!!!!!!!!!!!!.");
+                        Console.WriteLine("**************Por favor selecione outra opção.*************");
                         MenuSelecao();
                         break;
                     }
-
+                    
             }
-
-            Console.WriteLine("-----------------------Fim da Operação--------------------------");
-            CalcularOutraVez();
+            
         }
 
         static void MenuSelecao()
@@ -82,22 +87,6 @@ namespace Calculadora
             float numeroB = float.Parse(Console.ReadLine());
 
             return (numeroA, numeroB);
-        }
-
-        static void CalcularOutraVez()
-        {
-            Console.WriteLine("Voce deseja realizar outro calculo?");
-            Console.WriteLine("1 - Sim");
-            Console.WriteLine("2 - Não");
-            var opcao = int.Parse(Console.ReadLine());
-
-            if (opcao == 1)
-            {
-                MenuSelecao();
-            } else
-            {
-                Console.WriteLine("-----------FIM-------------");
-            }             
         }
     }
 }

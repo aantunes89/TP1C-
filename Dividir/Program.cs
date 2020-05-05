@@ -2,9 +2,9 @@
 
 namespace Dividir
 {
-    public class Dividir
+    public static class Dividir
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Digite o primeiro número");
             float numeroA = float.Parse(Console.ReadLine());

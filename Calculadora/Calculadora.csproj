@@ -11,4 +11,17 @@
     <ProjectReference Include="..\Dividir\Dividir.csproj" />
     <ProjectReference Include="..\Subrair\Subtrair.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Soma.cs" />
+    <Compile Remove="Classes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Classes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Classes\**" />
+  </ItemGroup>
 </Project>
